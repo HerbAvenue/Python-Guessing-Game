@@ -1,7 +1,7 @@
 from random import Random, randint
 
 #GETS A USERS INPUT AND DESIRED DIFFICULTY
-name = input('What is your name? ')
+print("Welcome to the show kid.")
 difficulty = input("Difficulty (1 = easy, 2, medium, 3 = hard): ")
 
 #ENSURES THE DIFFICULTY PICKED IS VALID
@@ -30,29 +30,36 @@ elif difficulty == '3':
 
 
 #COMPUTER SELECTS A CORRECT ANSWER
-correct_answer = num_range[randint(0, len(num_range))]
+correct_answer = num_range[randint(1, len(num_range))]
+#print(correct_answer)
 
 
 
 #USER USES THEIR ATTEMPTS TO PICK THE CORRECT ANSWER
 attempts = 1
+user_guess = ""
+
 print("You have 3 attempts to guess the correct number from", num_range[0], "to", num_range[-1])
 
-while attempts < 4:
+while attempts == 1 and user_guess != str(correct_answer):
     print("Attempt:", attempts)
-    guess = input("What is your guess? ")
+    attempts += 1
+    user_guess = input("What is your guess? ")
 
-    if guess == str(correct_answer):
-        print("You got it!")
-        break
+while attempts > 1 and attempts < 4 and user_guess != str(correct_answer):
+    print("Attempt:", attempts)
+    attempts += 1
+    print("Try again!")
+    user_guess = input("What is your guess? ")
 
-    else:
-        print("Try again")
-        attempts += 1
+if attempts >= 4 and user_guess != str(correct_answer):
+    print("You're not smart enough for this!")
+
+else:
+    print("Yay! You did it! (Wait, really? How?)")
 
 
-print("You're a fucking loser")
-   
+
 
 
 
