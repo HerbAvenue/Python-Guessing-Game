@@ -50,7 +50,7 @@ def play_game():
         print("The correct answer was", correct_answer)
 
     else:
-        print("Yay! You did it! (Wait, really? How?")
+        print("Yay! You did it! (Wait, really? How?)")
 
         
 
